@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/new_note"
+        android:text="Note something new"
+        android:gravity="start|center_vertical"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:textColor="#ff5d5d5d"
+        android:background="?attr/editTextBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</android.support.v7.widget.CardView>
