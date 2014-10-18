@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">简单笔记</string>
+    <string name="note_action_save">保存</string>
+    <string name="note_action_remove">删除</string>
+    <string name="note_content">输入内容</string>
+    <string name="note_title">输入标题</string>
+    <string name="note">笔记</string>
+    <string name="note_new_hint">记录新事情</string>
+</resources>

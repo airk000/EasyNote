@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/new_note"
-        android:text="Note something new"
+        android:text="@string/note_new_hint"
         android:gravity="start|center_vertical"
         android:layout_gravity="center"
         android:layout_margin="8dp"
