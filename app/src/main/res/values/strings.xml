@@ -9,5 +9,6 @@
     <string name="note_title">Title</string>
     <string name="note">Note</string>
     <string name="note_new_hint">Note something new</string>
+    <string name="note_no_content">No content</string>
 
 </resources>

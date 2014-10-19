@@ -2,6 +2,7 @@ package com.github.airk.easynote.view.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -70,6 +71,10 @@ public class NewNoteActivity extends ActionBarActivity {
                 finish();
                 break;
             case R.id.action_save:
+                if (TextUtils.isEmpty(mContent.getText())) {
+                    Toast.makeText(this, getResources().getString(R.string.note_no_content), Toast.LENGTH_SHORT).show();
+                    break;
+                }
                 Toast.makeText(this, getResources().getString(R.string.note_action_save), Toast.LENGTH_SHORT).show();
                 Note note = new Note();
                 note.title = mTitle.getText().toString();
