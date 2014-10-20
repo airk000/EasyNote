@@ -6,9 +6,8 @@ import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.Button;
 
 import com.github.airk.easynote.R;
@@ -42,8 +41,7 @@ public class MainActivity extends ActionBarActivity implements NoteAdapter.Click
 
         ButterKnife.inject(this);
 
-        mRecycler.setLayoutManager(new GridLayoutManager(this, 2));
-
+        mRecycler.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         mAdapter = new NoteAdapter(this, this);
         mAdapter.setData(null);
         mRecycler.setAdapter(mAdapter);
@@ -52,7 +50,7 @@ public class MainActivity extends ActionBarActivity implements NoteAdapter.Click
 
     @OnClick(R.id.new_note)
     void newNote() {
-        startActivityForResult(new Intent(this, NewNoteActivity.class), REQUEST_NEW_NOTE);
+        startActivityForResult(new Intent(this, NoteActivity.class), REQUEST_NEW_NOTE);
     }
 
     @Override
@@ -65,8 +63,8 @@ public class MainActivity extends ActionBarActivity implements NoteAdapter.Click
 
     @Override
     public void onItemClicked(long timestamp) {
-        Intent intent = new Intent(this, NewNoteActivity.class);
-        intent.putExtra(NewNoteActivity.KEY_TIMESTAMP, timestamp);
+        Intent intent = new Intent(this, NoteActivity.class);
+        intent.putExtra(NoteActivity.KEY_TIMESTAMP, timestamp);
         startActivityForResult(intent, REQUEST_NEW_NOTE);
     }
 
@@ -109,7 +107,6 @@ public class MainActivity extends ActionBarActivity implements NoteAdapter.Click
             List<Note> result = new ArrayList<Note>();
             List<File> files = FileOperation.getAllFiles(getContext());
             for (File f : files) {
-                Log.d(TAG, f.getName());
                 Note note = FileOperation.readFromFile(getContext(), f.getName());
                 result.add(note);
             }

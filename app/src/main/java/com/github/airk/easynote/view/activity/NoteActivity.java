@@ -22,7 +22,7 @@ import butterknife.InjectView;
 /**
  * Created by kevin on 2014/10/18.
  */
-public class NewNoteActivity extends ActionBarActivity {
+public class NoteActivity extends ActionBarActivity {
     @InjectView(R.id.title)
     EditText mTitle;
     @InjectView(R.id.timestamp)
